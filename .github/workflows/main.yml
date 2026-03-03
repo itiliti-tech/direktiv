@@ -48,7 +48,7 @@ jobs:
         run: |
           # Sync *your current checked-out branch* (typically your fork's default branch)
           upstream_branch="${{ steps.upstream.outputs.parent_default_branch }}"
-          git merge --ff-only "upstream/${upstream_branch}"
+          git merge --no-ff "upstream/${upstream_branch}"
 
       - name: Push updated branch back to fork
         run: |
